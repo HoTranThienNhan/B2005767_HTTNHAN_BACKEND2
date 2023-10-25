@@ -38,7 +38,7 @@ class ContactService {
     }
 
     async findByName(name) {
-        return await this.find({
+        return await this.Contact.find({
             name: { $regex: new RegExp(name), $options: "i" },
         });
     }
@@ -70,7 +70,7 @@ class ContactService {
     }
 
     async findFavorite() {
-        return await this.find({ favorite: true });
+        return await this.Contact.find({ favorite: true });
     }
 
     async deleteAll() {
